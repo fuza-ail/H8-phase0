@@ -1,0 +1,34 @@
+1. Newton Second Law
+SET massa TO 600
+SET percepatan TO 2
+COMPUTE ResultanGaya as massa * percepatan
+DISPLAY ResultanGaya
+
+2. Tahun kabisat
+GET year
+IF year MOD 4 EQUAL 0 AND year MOD 100 NOT EQUAL 0 THEN
+  DISPLAY 'tahun kabisat'
+ELSE IF year MOD 4 EQUAL 0 AND year MOD 100 EQUAL 0 AND year MOD 400 EQUAL 0 THEN
+  DISPLAY 'tahun kabisat'
+ELSE
+  DISPLAY 'bukan tahun kabisat'
+ENDIF
+
+3. Laundry Day
+SET pakaian TO 20
+SET count TO 0
+FOR each pakaian
+  INCREMENT count
+ENDFOR
+DISPLAY count
+
+4. Periksa kuku
+SET murid TO 20
+SET kuku TO panjang
+FOR each murid
+  IF kuku NOT EQUAL panjang THEN
+    CALL memuji
+  ELSE
+    CALL menghukum
+  ENDIF
+ENDFOR
