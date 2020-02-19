@@ -1,0 +1,64 @@
+function changeVocals (str) {
+  //code di sini
+  var kamus = 'abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var kata =''
+  for(var i =0; i<str.length; i++){
+    for(var j=0; j<kamus.length;j++){
+      
+    }
+    kata+= str[i]
+  }
+
+  return kata;
+}
+
+function reverseWord (str) {
+  //code di sini
+  var kata=''
+  for(var i = str.length-1; i>=0; i--){
+    kata+= str[i]
+  }
+  return kata;
+}
+
+function setLowerUpperCase (str) {
+  //code di sini
+  var kata = ''
+  for(var i=0; i<str.length;i++){
+    if(str[i]===str[i].toLowerCase()){
+      kata+= str[i].toUpperCase();
+    }else{
+      kata+= str[i].toLowerCase();
+    }
+  }
+  return kata
+}
+
+function removeSpaces (str) {
+  //code di sini
+  var kamus = 'abcdefghijklmnopqrstuvwxyz';
+  var kamusSatu= kamus.toUpperCase();
+  var total = kamus + kamusSatu;
+  var kata = ''
+  for(var i =0; i<str.length;i++){
+    for(var j=0; j<total.length;j++){
+      if(str[i]===total[j]){
+        kata+= total[j]
+      }
+    }
+  }
+  return kata
+}
+
+function passwordGenerator (name) {
+  //code di sini
+  var changeV = changeVocals(name);
+  var reverseW = reverseWord(changeV);
+  var setLU = setLowerUpperCase(reverseW);
+  return removeSpaces(setLU)
+}
+
+console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
+console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
+console.log(passwordGenerator('Alexei')); // 'JFXFLb'
+console.log(passwordGenerator('Alex')); // 'Minimal karakter yang diinputkan adalah 5 karakter'
