@@ -1,6 +1,12 @@
 function totalDigitRekursif(angka) {
   // you can only write your code here!
-  
+  var angkaString = angka.toString();
+  var digit = angkaString.length;
+  if(digit == 1){
+    return angka%10
+  }else{
+    return angka%10 + totalDigitRekursif(Math.floor(angka/10))
+  }
 }
 
 // TEST CASES
