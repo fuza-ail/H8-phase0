@@ -3,7 +3,7 @@ function totalDigitRekursif(angka) {
   var angkaString = angka.toString();
   var digit = angkaString.length;
   if(digit == 1){
-    return angka%10
+    return angka
   }else{
     return angka%10 + totalDigitRekursif(Math.floor(angka/10))
   }
