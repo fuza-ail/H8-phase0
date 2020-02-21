@@ -1,9 +1,9 @@
 function kaliTerusRekursif(angka) {
   // you can only write your code here!
-  var angkaStr= angka.toString();
-  var digit = angka.length;
-  if(digit ==1){
-    
+  if(angka<10){
+    return angka
+  }else{
+    return angka%10 * kaliTerusRekursif(Math.floor(angka/10))
   }
 }
 
