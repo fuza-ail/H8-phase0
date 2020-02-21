@@ -1,12 +1,29 @@
 function changeVocals (str) {
   //code di sini
-  var kamus = 'abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var kata =''
-  for(var i =0; i<str.length; i++){
-    for(var j=0; j<kamus.length;j++){
-      
+  var vokal = {
+    a:'b',
+    i:'j',
+    u:'v',
+    e:'f',
+    o:'p',
+    A:'B',
+    I:'J',
+    U:'V',
+    E:'F',
+    O:'P'
+  }
+  let kata=''
+  for (let i = 0; i < str.length; i++) {
+    if(str[i] in vokal){
+      for( let key in vokal){
+        if(key == str[i]){
+          kata+= vokal[key]
+        }
+      }
+    }else{
+      kata+= str[i]
     }
-    kata+= str[i]
+
   }
 
   return kata;
@@ -55,7 +72,11 @@ function passwordGenerator (name) {
   var changeV = changeVocals(name);
   var reverseW = reverseWord(changeV);
   var setLU = setLowerUpperCase(reverseW);
-  return removeSpaces(setLU)
+  if(name.length<5){
+    return 'Minimal karakter yang diinputkan adalah 5 karakter'
+  }else{
+    return setLU
+  }
 }
 
 console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
