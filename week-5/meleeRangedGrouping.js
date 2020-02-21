@@ -6,9 +6,23 @@ function meleeRangedGrouping (str) {
   for( let i =0; i<strSplit.length; i++){
     subArr.push(strSplit[i])
     arr.push(subArr[i].split('-'))
+    var obj={};
+    for(let i=0; i<arr.length;i++){
+      obj[arr[i][1]]=0
+    }
   }
-  
-  return arr
+  var unique = Object.keys(obj)
+  var result =[]
+  for(let i=0;i< unique.length;i++){
+    var subres=[]
+    for (let j = 0; j < arr.length; j++) {
+      if(arr[j][1]==unique[i]){
+        subres.push(arr[j][0])
+      }
+    }
+    result.push(subres)
+  }
+  return result
 }
 
 // TEST CASE
