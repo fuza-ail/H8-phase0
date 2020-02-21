@@ -13,14 +13,21 @@ function meleeRangedGrouping (str) {
   }
   var unique = Object.keys(obj)
   var result =[]
-  for(let i=0;i< unique.length;i++){
-    var subres=[]
-    for (let j = 0; j < arr.length; j++) {
-      if(arr[j][1]==unique[i]){
-        subres.push(arr[j][0])
+  if(str==''){
+    return []
+  }else{
+    for(let i=0;i< unique.length;i++){
+      var subres=[]
+      for (let j = 0; j < arr.length; j++) {
+        if(arr[j][1]==unique[i]){
+          subres.push(arr[j][0])
+        }
       }
+      result.push(subres)
     }
-    result.push(subres)
+    if(unique.length==1){
+      result.push([])
+    }
   }
   return result
 }
